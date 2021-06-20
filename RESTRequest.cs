@@ -63,7 +63,7 @@ namespace CustomHTTPRequestNS
         /// <param name="method">Web request method</param>
         /// <param name="bodymessage">Body message string</param>
         /// <param name="Token">Your token / JWT</param>
-        /// <returns></returns>
+        /// <returns>It will return the customer web response</returns>
         public CustomWebResponse RESTBearer(string url,Method method, string bodymessage, string Token)
         {
             HttpWebResponse Hresponse = null;
