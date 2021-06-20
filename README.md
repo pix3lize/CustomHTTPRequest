@@ -33,38 +33,16 @@ Console.WriteLine("Time taken : " +CResponse.TimeTaken);
 ```csharp 
 CustomHTTPRequest CRequest = new CustomHTTPRequest();
 CustomWebResponse CResponse = new CustomWebResponse();
-
 CookieContainer CContainer = new CookieContainer();
 
+//Login to website and store the authentication session.
 CResponse = CRequest.HTTPCustomRequest("https://docushare.xerox.com/doug/dsweb/ApplyLogin", "username=username@email.com&password=password&domain=DocuShare&Login=Login", ref CContainer);
 
-//GET  https://www.google.com 200 OK
-Console.WriteLine(CResponse.Method + "  " +
-    CResponse.UrlRequest + " " +
-    CResponse.StatusCode + " " +
-    CResponse.Status);
-
-//Time taken : 00:00:00:05
-Console.WriteLine("Time taken : " + CResponse.TimeTaken);
-Console.WriteLine("Response : " + CResponse.Response);
-
+// Download file and save it into file 
 CRequest.ReturnStream = true;
 CResponse = CRequest.HTTPCustomRequest(@"https://docushare.xerox.com/doug/dsweb/Get/Document-121470", CContainer);
 
-//To restore response as stream
-CResponse.ResponseStream.Position = 0;
-
-//dotnet core use : please use encoding.GetEncoding("windows-1254") 
-StreamWriter sw = new StreamWriter(@"download2.pdf", false, Encoding.Default); 
-
-//dotnet core use : please use encoding.GetEncoding("windows-1254") 
-StreamReader sr = new StreamReader(CResponse.ResponseStream, Encoding.Default); 
-sw.Write(sr.ReadToEnd());
-sw.Close();
-sr.Close();
-
-//Result:
-//File will be downloaded to download2.pdf
+CResponse.SafeToFile(@"download2.pdf");
 ```
 #### REST API
 Send REST API request with JWT token
