@@ -73,6 +73,5 @@ Send REST API request with JWT token
 RESTRequest RRequest = new RESTRequest();
 CResponse = new CustomWebResponse();
 
-CResponse = RRequest.RESTGETBearer(@"https://api.sandbox.finance.tech/v1/profiles","{{JWT token}}");
-
+CResponse = RRequest.RESTBearer(@"https://api.sandbox.finance.tech/v1/profiles", RESTRequest.Method.GET, "","{{JWT token}}");
 ```

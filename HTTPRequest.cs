@@ -62,8 +62,10 @@ namespace CustomHTTPRequestNS
 
             XDeveloper = "";
             this.Timeout = 120 * 1000;
+
             CharEncode = Encoding.Default;
         }
+
 
         /// <summary>
         /// Basic authentication POST request web request with cookies container 
@@ -82,13 +84,12 @@ namespace CustomHTTPRequestNS
             StreamReader reader = null;
             Stopwatch StopWatch = new Stopwatch();
             HttpWebRequest Hrequest = (HttpWebRequest)WebRequest.Create(url);
+            CustomWebResponse CustWR;
 
             try
             {
                 StopWatch.Start();
-                byte[] Data = CharEncode.GetBytes(poststring);
-
-                CustomWebResponse CustWR;
+                byte[] Data = CharEncode.GetBytes(poststring);                
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -144,7 +145,7 @@ namespace CustomHTTPRequestNS
             }
             catch (Exception ex)
             {
-                CustomWebResponse CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
+                CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
                 CustWR.Method = Hrequest.Method;
                 CustWR.UrlRequest = url;
                 return CustWR;
@@ -152,8 +153,15 @@ namespace CustomHTTPRequestNS
             finally
             {
                 if (tstream != null) tstream.Close();
+                tstream = null;
                 if (reader != null) reader.Close();
+                reader = null;
                 if (Hresponse != null) Hresponse.Close();
+                Hresponse = null;
+                Hrequest = null;
+                CustWR = null;
+                StopWatch = null;
+                cookiescontain = null;
             }
         }
 
@@ -174,13 +182,12 @@ namespace CustomHTTPRequestNS
             StreamReader reader = null;
             Stopwatch StopWatch = new Stopwatch();
             HttpWebRequest Hrequest = (HttpWebRequest)WebRequest.Create(url);
+            CustomWebResponse CustWR;
 
             try
             {
                 StopWatch.Start();
-                byte[] Data = CharEncode.GetBytes(poststring);
-
-                CustomWebResponse CustWR;
+                byte[] Data = CharEncode.GetBytes(poststring);                
 
                 //Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -233,7 +240,7 @@ namespace CustomHTTPRequestNS
             }
             catch (Exception ex)
             {
-                CustomWebResponse CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
+                CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
                 CustWR.Method = Hrequest.Method;
                 CustWR.UrlRequest = url;
                 return CustWR;
@@ -241,8 +248,14 @@ namespace CustomHTTPRequestNS
             finally
             {
                 if (tstream != null) tstream.Close();
+                tstream = null;
                 if (reader != null) reader.Close();
+                reader = null;
                 if (Hresponse != null) Hresponse.Close();
+                Hresponse = null;
+                Hrequest = null;
+                CustWR = null;
+                StopWatch = null;
             }
         }
 
@@ -262,11 +275,11 @@ namespace CustomHTTPRequestNS
             StreamReader reader = null;
             Stopwatch StopWatch = new Stopwatch();
             HttpWebRequest Hrequest = (HttpWebRequest)WebRequest.Create(url);
+            CustomWebResponse CustWR;
 
             try
             {
-                StopWatch.Start();
-                CustomWebResponse CustWR;
+                StopWatch.Start();                
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -313,7 +326,7 @@ namespace CustomHTTPRequestNS
             }
             catch (Exception ex)
             {
-                CustomWebResponse CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
+                CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
 
                 CustWR.Method = Hrequest.Method;
                 CustWR.UrlRequest = url;
@@ -322,8 +335,15 @@ namespace CustomHTTPRequestNS
             finally
             {
                 if (tstream != null) tstream.Close();
+                tstream = null;
                 if (reader != null) reader.Close();
+                reader = null;
                 if (Hresponse != null) Hresponse.Close();
+                Hresponse = null;
+                Hrequest = null;
+                CustWR = null;
+                StopWatch = null;
+                cookiescontain = null;
             }
         }
 
@@ -341,13 +361,12 @@ namespace CustomHTTPRequestNS
             StreamReader reader = null;
             Stopwatch StopWatch = new Stopwatch();
             HttpWebRequest Hrequest = (HttpWebRequest)WebRequest.Create(url);
+            CustomWebResponse CustWR;
 
             try
             {
                 StopWatch.Start();
-                byte[] Data = CharEncode.GetBytes(poststring);
-
-                CustomWebResponse CustWR;
+                byte[] Data = CharEncode.GetBytes(poststring);                
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -392,7 +411,7 @@ namespace CustomHTTPRequestNS
             }
             catch (Exception ex)
             {
-                CustomWebResponse CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
+                CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
                 CustWR.Method = Hrequest.Method;
                 CustWR.UrlRequest = url;
                 return CustWR;
@@ -400,8 +419,15 @@ namespace CustomHTTPRequestNS
             finally
             {
                 if (tstream != null) tstream.Close();
+                tstream = null;
                 if (reader != null) reader.Close();
+                reader = null;
                 if (Hresponse != null) Hresponse.Close();
+                Hresponse = null;
+                Hrequest = null;
+                CustWR = null;
+                StopWatch = null;
+                cookiescontain = null;
             }
         }
 
@@ -418,13 +444,12 @@ namespace CustomHTTPRequestNS
             StreamReader reader = null;
             Stopwatch StopWatch = new Stopwatch();
             HttpWebRequest Hrequest = (HttpWebRequest)WebRequest.Create(url);
+            CustomWebResponse CustWR;
 
             try
             {
                 StopWatch.Start();
                 byte[] Data = CharEncode.GetBytes(poststring);
-
-                CustomWebResponse CustWR;
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -451,6 +476,7 @@ namespace CustomHTTPRequestNS
                 {
                     CustWR = new CustomWebResponse(tstream, null, Hresponse.StatusDescription, (int)Hresponse.StatusCode,
                         StopWatch.Elapsed.ToString(@"hh\:mm\:ss\:ff"), Hrequest.Method + " " + url);
+
                 }
                 else
                 {
@@ -468,7 +494,7 @@ namespace CustomHTTPRequestNS
             }
             catch (Exception ex)
             {
-                CustomWebResponse CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
+                CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
                 CustWR.Method = Hrequest.Method;
                 CustWR.UrlRequest = url;
                 return CustWR;
@@ -476,8 +502,14 @@ namespace CustomHTTPRequestNS
             finally
             {
                 if (tstream != null) tstream.Close();
+                tstream = null;
                 if (reader != null) reader.Close();
+                reader = null;
                 if (Hresponse != null) Hresponse.Close();
+                Hresponse = null;
+                Hrequest = null;
+                CustWR = null;
+                StopWatch = null;
             }
         }
 
@@ -493,11 +525,11 @@ namespace CustomHTTPRequestNS
             StreamReader reader = null;
             Stopwatch StopWatch = new Stopwatch();
             HttpWebRequest Hrequest = (HttpWebRequest)WebRequest.Create(url);
+            CustomWebResponse CustWR;
 
             try
             {
                 StopWatch.Start();
-                CustomWebResponse CustWR;
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -535,7 +567,7 @@ namespace CustomHTTPRequestNS
             }
             catch (Exception ex)
             {
-                CustomWebResponse CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
+                CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
 
                 CustWR.Method = Hrequest.Method;
                 CustWR.UrlRequest = url;
@@ -544,8 +576,14 @@ namespace CustomHTTPRequestNS
             finally
             {
                 if (tstream != null) tstream.Close();
+                tstream = null;
                 if (reader != null) reader.Close();
+                reader = null;
                 if (Hresponse != null) Hresponse.Close();
+                Hresponse = null;
+                Hrequest = null;
+                CustWR = null;
+                StopWatch = null;
             }
 
         }
@@ -564,13 +602,14 @@ namespace CustomHTTPRequestNS
             StreamReader reader = null;
             Stopwatch StopWatch = new Stopwatch();
             HttpWebRequest Hrequest = (HttpWebRequest)WebRequest.Create(url);
+            CustomWebResponse CustWR;
 
             try
             {
                 StopWatch.Start();
                 byte[] Data = CharEncode.GetBytes(poststring);
 
-                CustomWebResponse CustWR;
+                
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -615,7 +654,7 @@ namespace CustomHTTPRequestNS
             }
             catch (Exception ex)
             {
-                CustomWebResponse CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
+                CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
                 CustWR.Method = Hrequest.Method;
                 CustWR.UrlRequest = url;
                 return CustWR;
@@ -623,8 +662,14 @@ namespace CustomHTTPRequestNS
             finally
             {
                 if (tstream != null) tstream.Close();
+                tstream = null;
                 if (reader != null) reader.Close();
+                reader = null;
                 if (Hresponse != null) Hresponse.Close();
+                Hresponse = null;
+                Hrequest = null;
+                CustWR = null;
+                StopWatch = null;
             }
         }
 
@@ -641,11 +686,11 @@ namespace CustomHTTPRequestNS
             StreamReader reader = null;
             Stopwatch StopWatch = new Stopwatch();
             HttpWebRequest Hrequest = (HttpWebRequest)WebRequest.Create(url);
+            CustomWebResponse CustWR;
 
             try
             {
-                StopWatch.Start();
-                CustomWebResponse CustWR;
+                StopWatch.Start();                
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -659,11 +704,9 @@ namespace CustomHTTPRequestNS
                 Hrequest.AllowAutoRedirect = true;
                 Hresponse = (HttpWebResponse)Hrequest.GetResponse();
 
-
                 tstream = Hresponse.GetResponseStream();
                 reader = new StreamReader(tstream, CharEncode);
 
-                StopWatch.Stop();
                 if (ReturnStream)
                 {
                     CustWR = new CustomWebResponse(tstream, cookiescontain, Hresponse.StatusDescription, (int)Hresponse.StatusCode,
@@ -685,7 +728,7 @@ namespace CustomHTTPRequestNS
             }
             catch (Exception ex)
             {
-                CustomWebResponse CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
+                CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
 
                 CustWR.Method = Hrequest.Method;
                 CustWR.UrlRequest = url;
@@ -694,8 +737,15 @@ namespace CustomHTTPRequestNS
             finally
             {
                 if (tstream != null) tstream.Close();
+                tstream = null;
                 if (reader != null) reader.Close();
+                reader = null;
                 if (Hresponse != null) Hresponse.Close();
+                Hresponse = null;
+                Hrequest = null;
+                CustWR = null;
+                StopWatch = null;
+                cookiescontain = null;
             }
         }
 
@@ -714,13 +764,12 @@ namespace CustomHTTPRequestNS
             StreamReader reader = null;
             Stopwatch StopWatch = new Stopwatch();
             HttpWebRequest Hrequest = (HttpWebRequest)WebRequest.Create(url);
+            CustomWebResponse CustWR;
 
             string Boundary = "----WebKitFormBoundary" + DateTime.Now.Ticks.ToString("x");
             try
             {
-                StopWatch.Start();
-
-                CustomWebResponse CustWR;
+                StopWatch.Start();                
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -809,7 +858,7 @@ namespace CustomHTTPRequestNS
             }
             catch (Exception ex)
             {
-                CustomWebResponse CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
+                CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
 
                 CustWR.Method = Hrequest.Method;
                 CustWR.UrlRequest = url;
@@ -818,8 +867,14 @@ namespace CustomHTTPRequestNS
             finally
             {
                 if (tstream != null) tstream.Close();
+                tstream = null;
                 if (reader != null) reader.Close();
+                reader = null;
                 if (Hresponse != null) Hresponse.Close();
+                Hresponse = null;
+                Hrequest = null;
+                CustWR = null;
+                StopWatch = null;
             }
         }
 
@@ -840,13 +895,12 @@ namespace CustomHTTPRequestNS
             Stopwatch StopWatch = new Stopwatch();
             //System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             HttpWebRequest Hrequest = (HttpWebRequest)WebRequest.Create(url);
+            CustomWebResponse CustWR;
 
             string Boundary = "----WebKitFormBoundary" + DateTime.Now.Ticks.ToString("x");
             try
             {
-                StopWatch.Start();
-
-                CustomWebResponse CustWR;
+                StopWatch.Start();                
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -950,7 +1004,7 @@ Content-Transfer-Encoding: binary
             }
             catch (Exception ex)
             {
-                CustomWebResponse CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
+                CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
 
                 CustWR.Method = Hrequest.Method;
                 CustWR.UrlRequest = url;
@@ -959,8 +1013,14 @@ Content-Transfer-Encoding: binary
             finally
             {
                 if (tstream != null) tstream.Close();
+                tstream = null;
                 if (reader != null) reader.Close();
+                reader = null;
                 if (Hresponse != null) Hresponse.Close();
+                Hresponse = null;
+                Hrequest = null;
+                CustWR = null;
+                StopWatch = null;
             }
         }
 
@@ -982,13 +1042,14 @@ Content-Transfer-Encoding: binary
             Stopwatch StopWatch = new Stopwatch();
             //System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             HttpWebRequest Hrequest = (HttpWebRequest)WebRequest.Create(url);
+            CustomWebResponse CustWR;
 
             string Boundary = "----WebKitFormBoundary" + DateTime.Now.Ticks.ToString("x");
             try
             {
                 StopWatch.Start();
 
-                CustomWebResponse CustWR;
+              
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -1075,6 +1136,7 @@ Content-Transfer-Encoding: binary
                 {
                     CustWR = new CustomWebResponse(tstream, null, Hresponse.StatusDescription, (int)Hresponse.StatusCode,
                         StopWatch.Elapsed.ToString(@"hh\:mm\:ss\:ff"), Hrequest.Method + " " + url);
+
                 }
                 else
                 {
@@ -1092,7 +1154,7 @@ Content-Transfer-Encoding: binary
             }
             catch (Exception ex)
             {
-                CustomWebResponse CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
+                CustWR = new CustomWebResponse(ex.Message, null, "Custom error this error thrown by other exception on the function", 1000);
 
                 CustWR.Method = Hrequest.Method;
                 CustWR.UrlRequest = url;
@@ -1101,13 +1163,16 @@ Content-Transfer-Encoding: binary
             finally
             {
                 if (tstream != null) tstream.Close();
+                tstream = null;
                 if (reader != null) reader.Close();
+                reader = null;
                 if (Hresponse != null) Hresponse.Close();
+                Hresponse = null;
+                Hrequest = null;
+                CustWR = null;
+                StopWatch = null;
             }
         }
-
-
-
 
         /// <summary>
         /// To catch web exception and able to retrieve the web error status and HTTP transaction 
@@ -1309,6 +1374,43 @@ Content-Transfer-Encoding: binary
             this.TimeTaken = TimeTaken;
             this.ContentType = contenttype;
             this.UrlRequest = url;
+        }
+
+        /// <summary>
+        /// This function to save the response to file. 
+        /// If return stream is false, response will be save as UTF-8 
+        /// If return stream is true, response will be save as ANSI
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns>If success it will return success and error message if not</returns>
+        public string SafeToFile(string path)
+        {
+            try
+            {
+                if (ResponseStream.Length > 0)
+                {
+                    ResponseStream.Position = 0;
+                    Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                    StreamWriter sw = new StreamWriter(path, false, Encoding.GetEncoding("windows-1254"));
+                    StreamReader sr = new StreamReader(ResponseStream, Encoding.GetEncoding("windows-1254"));
+                    sw.Write(sr.ReadToEnd());
+                    sw.Close();
+                    sr.Close();
+                }
+                else 
+                {
+                    StreamWriter sw = new StreamWriter(path, false);
+                    StreamReader sr = new StreamReader(ResponseStream);
+                    sw.Write(Response);
+                    sw.Close();
+                    sr.Close();
+                }
+                return "success";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
     }
 
