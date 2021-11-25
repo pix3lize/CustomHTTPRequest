@@ -77,7 +77,7 @@ namespace CustomHTTPRequestNS
         /// <param name="cookiescontain">Cookies contains - .NET C# cookies value container</param>
         /// <returns>CustomWebResponse</returns>
         public CustomWebResponse HTTPCustomRequestBasic(string url, string poststring,
-            string username, string password, CookieContainer cookiescontain)
+            string username, string password, ref CookieContainer cookiescontain)
         {
             HttpWebResponse Hresponse = null;
             Stream tstream = null;
@@ -89,7 +89,7 @@ namespace CustomHTTPRequestNS
             try
             {
                 StopWatch.Start();
-                byte[] Data = CharEncode.GetBytes(poststring);                
+                byte[] Data = CharEncode.GetBytes(poststring);
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -187,7 +187,7 @@ namespace CustomHTTPRequestNS
             try
             {
                 StopWatch.Start();
-                byte[] Data = CharEncode.GetBytes(poststring);                
+                byte[] Data = CharEncode.GetBytes(poststring);
 
                 //Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -279,7 +279,7 @@ namespace CustomHTTPRequestNS
 
             try
             {
-                StopWatch.Start();                
+                StopWatch.Start();
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -366,7 +366,7 @@ namespace CustomHTTPRequestNS
             try
             {
                 StopWatch.Start();
-                byte[] Data = CharEncode.GetBytes(poststring);                
+                byte[] Data = CharEncode.GetBytes(poststring);
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -609,7 +609,7 @@ namespace CustomHTTPRequestNS
                 StopWatch.Start();
                 byte[] Data = CharEncode.GetBytes(poststring);
 
-                
+
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -690,7 +690,7 @@ namespace CustomHTTPRequestNS
 
             try
             {
-                StopWatch.Start();                
+                StopWatch.Start();
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -769,7 +769,7 @@ namespace CustomHTTPRequestNS
             string Boundary = "----WebKitFormBoundary" + DateTime.Now.Ticks.ToString("x");
             try
             {
-                StopWatch.Start();                
+                StopWatch.Start();
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -900,7 +900,7 @@ namespace CustomHTTPRequestNS
             string Boundary = "----WebKitFormBoundary" + DateTime.Now.Ticks.ToString("x");
             try
             {
-                StopWatch.Start();                
+                StopWatch.Start();
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -1049,7 +1049,7 @@ Content-Transfer-Encoding: binary
             {
                 StopWatch.Start();
 
-              
+
 
                 Hrequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
@@ -1397,7 +1397,7 @@ Content-Transfer-Encoding: binary
                     sw.Close();
                     sr.Close();
                 }
-                else 
+                else
                 {
                     StreamWriter sw = new StreamWriter(path, false);
                     StreamReader sr = new StreamReader(ResponseStream);
